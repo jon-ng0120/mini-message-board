@@ -1,24 +1,26 @@
 var express = require('express');
 var router = express.Router();
 
-const messages = [
-  {
-    title: 'Hi there!',
-    text: 'lorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem sfaslorem',
-    user: 'Amando',
-    added: new Date(),
-  },
-  {
-    title: 'Hello World!',
-    text: 'lorem sfasdf',
-    user: 'Charles',
-    added: new Date(),
-  },
-];
+const messages = [];
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
   res.render('index', { messages: messages });
+});
+
+router.post('/new', function (req, res, next) {
+  const title = req.body.title;
+  const author = req.body.author;
+  const message = req.body.message;
+  const date = new Date();
+  const messageObj = {
+    title,
+    author,
+    message,
+    date,
+  };
+  messages.push(messageObj);
+  res.redirect('/');
 });
 
 module.exports = router;
