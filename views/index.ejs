@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Open+Sans&family=Rubik:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <nav>
+      <h1>Mini Message Board</h1>
+    </nav>
+    <div class="messages">
+      <h2>Latest Posts</h2>
+      <% for (const message of messages) { %>
+      <div class="message">
+        <h2 class="title"><%= message.title %></h2>
+        <div class="user-container">
+          <p class="user"><%= message.user %></p>
+          <p class="date"><%= message.added %></p>
+        </div>
+        <p class="text"><%= message.text %></p>
+      </div>
+      <% } %>
+    </div>
   </body>
 </html>

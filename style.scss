@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Anton', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.6rem;
+}
+
+nav {
+  padding: 2rem;
+}
+
+.messages {
+  width: 80%;
+  margin: auto;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.message {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  padding: 3rem 3rem 4rem 3rem;
+  border-radius: 1rem;
+
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .user-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    .user {
+      color: rgba(0, 0, 0, 0.85);
+    }
+
+    .date {
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+}
