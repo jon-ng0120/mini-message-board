@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <nav>
-      <h1>Mini Message Board</h1>
-    </nav>
+    <%- include('./partials/header.ejs') %>
     <div class="messages">
       <h2>Latest Posts</h2>
       <% for (const message of messages) { %>

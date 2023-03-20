@@ -14,20 +14,42 @@
     <title>Document</title>
   </head>
   <body>
+    <%- include('./partials/header.ejs') %>
     <form method="POST" action="/new">
-      <div>
-        <label>Title</label>
-        <input type="text" placeholder="Enter title" name="title" />
-      </div>
+      <h2>New Post</h2>
       <div>
         <label>Author</label>
-        <input type="text" placeholder="Enter your name" name="author" />
+        <input
+          type="text"
+          placeholder="Enter your name"
+          name="author"
+          required
+        />
+      </div>
+      <div>
+        <label>Post Title</label>
+        <input
+          type="text"
+          placeholder="Enter title of post"
+          name="title"
+          required
+        />
       </div>
       <div>
         <label>Message</label>
-        <input type="text" placeholder="Enter your message" name="message" />
+        <textarea
+          type="text"
+          rows="4"
+          cols="50"
+          placeholder="Enter your message..."
+          name="message"
+          required
+        ></textarea>
       </div>
-      <button type="submit">Submit Post</button>
+      <div class="form-actions">
+        <a href="/" class="cancel">Cancel</a>
+        <button class="post" type="submit">Submit Post</button>
+      </div>
     </form>
   </body>
 </html>
