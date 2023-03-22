@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -12,8 +13,7 @@ const app = express();
 const port = 3000;
 
 // connect to mongodb
-const dbURI =
-  'mongodb+srv://myAtlasDBUser:HemlockAbby96@myatlasclusteredu.w2wgs05.mongodb.net/message-board?retryWrites=true&w=majority';
+const dbURI = `mongodb+srv://myAtlasDBUser:${process.env.MONGODB_PASSWORD}@myatlasclusteredu.w2wgs05.mongodb.net/message-board?retryWrites=true&w=majority`;
 mongoose
   .connect(dbURI)
   .then((result) => app.listen(port))
