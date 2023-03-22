@@ -1,14 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const mongoose = require('mongoose');
 
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 const newRouter = require('./routes/new');
 
-var app = express();
+const app = express();
 const port = 3000;
+
+// connect to mongodb
+const dbURI =
+  'mongodb+srv://myAtlasDBUser:HemlockAbby96@myatlasclusteredu.w2wgs05.mongodb.net/message-board?retryWrites=true&w=majority';
+mongoose
+  .connect(dbURI)
+  .then((result) => app.listen(port))
+  .catch((err) => console.log(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,10 +46,6 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
-});
-
-app.listen(port, () => {
-  console.log(`Listening on port ${port}`);
 });
 
 module.exports = app;

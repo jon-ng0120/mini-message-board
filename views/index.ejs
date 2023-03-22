@@ -19,7 +19,7 @@
         <h2 class="title"><%= message.title %></h2>
         <div class="user-container">
           <p class="user"><%= message.author %></p>
-          <p class="date"><%= message.date %></p>
+          <p class="date"><%= formatDate(message.createdAt) %></p>
         </div>
         <p class="text"><%= message.message %></p>
       </div>
