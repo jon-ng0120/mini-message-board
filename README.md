@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-## Build Using
+## Built Using
 
 - [EJS](https://ejs.co/)
 - [Node.js](https://nodejs.org/en)
