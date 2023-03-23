@@ -1,6 +1,6 @@
 # Mini Message Board
 
-A test message board created using EJS, Node.js, and Express. Users can submit submit a post and have the request be sent back to the server. All posts are then displayed in the index page.
+A test message board created using EJS, Node.js, and Express. Users can submit posts and they are stored in MongoDB. All posts are retrieved from the DB and displayed on the index page.
 
 ## Getting Started
 
