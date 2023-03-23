@@ -13,7 +13,7 @@ const app = express();
 const port = 3000;
 
 // connect to mongodb
-const dbURI = `mongodb+srv://myAtlasDBUser:${process.env.MONGODB_PASSWORD}@myatlasclusteredu.w2wgs05.mongodb.net/message-board?retryWrites=true&w=majority`;
+const dbURI = process.env.MONGODB_URI;
 mongoose
   .connect(dbURI)
   .then((result) => app.listen(port))
