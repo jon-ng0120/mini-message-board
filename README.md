@@ -2,6 +2,10 @@
 
 A test message board created using EJS, Node.js, and Express. Users can submit posts and they are stored in MongoDB. All posts are retrieved from the DB and displayed on the index page.
 
+Deployed using [Render](https://render.com/).
+
+[Live Demo](https://mini-message-board-24yi.onrender.com/)
+
 ## Getting Started
 
 ```
